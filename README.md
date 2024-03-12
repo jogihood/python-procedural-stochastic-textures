@@ -15,4 +15,5 @@ Simply drag and drop "StochasticNode.hlsl" into any Unity assets folder.
 
 ## Disclaimer
 This is an unofficial implementation based on the paper "[Procedural Stochastic Textures by Tiling and Blending](https://eheitzresearch.wordpress.com/738-2/)" by Thomas Deliot and Eric Heitz.
+This implementation only includes the tiling part of the original paper. The blending part is not implemented.
 The majority of the code was developed with assistance from GPT-4.
