@@ -33,7 +33,7 @@ void TriangleGrid(float2 uv, out float w1, out float w2, out float w3, out int2 
 }
 
 // Main function adaptation for HLSL and Unity
-float3 ProceduralTilingAndBlending(
+float3 ProceduralTiling(
     UnityTexture2D tex,
     UnitySamplerState ss,
     float2 uv,
@@ -69,9 +69,9 @@ void TriplanarProceduralTiling_float(
     weights /= dot(weights, float3(1.0, 1.0, 1.0)); // Normalize the weights
 
     // Procedurally modify and sample the single texture for each axis
-    float3 proceduralColorX = ProceduralTilingAndBlending(tex, ss, worldPos.yz, tile);
-    float3 proceduralColorY = ProceduralTilingAndBlending(tex, ss, worldPos.xz, tile);
-    float3 proceduralColorZ = ProceduralTilingAndBlending(tex, ss, worldPos.xy, tile);
+    float3 proceduralColorX = ProceduralTiling(tex, ss, worldPos.yz, tile);
+    float3 proceduralColorY = ProceduralTiling(tex, ss, worldPos.xz, tile);
+    float3 proceduralColorZ = ProceduralTiling(tex, ss, worldPos.xy, tile);
 
     // Combine the textures based on weights
     combinedColor = proceduralColorX * weights.x + proceduralColorY * weights.y + proceduralColorZ * weights.z;
