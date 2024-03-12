@@ -2,7 +2,7 @@
 A simple HLSL file for use in Unity's Shader Graph.
 
 ## Installation
-Simply drag and drop the file into any Unity assets folder.
+Simply drag and drop "StochasticNode.hlsl" into any Unity assets folder.
 
 ## Usage
 1. Open the Shader Graph window.
